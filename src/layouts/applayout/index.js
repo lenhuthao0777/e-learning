@@ -1,10 +1,13 @@
 import React from 'react';
-import Header from '@/components/header/Header';
-function AppLayout() {
+import Header from 'src/components/header/Header';
+import Footer from 'src/components/footer/Footer';
+function AppLayout({ children }) {
 	return (
-		<div>
-			<h1>layout</h1>
-		</div>
+		<>
+			<Header></Header>
+			{children}
+			<Footer></Footer>
+		</>
 	);
 }
 
