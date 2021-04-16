@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 function Header() {
 	return (
-		<div>
-			<h1>Header</h1>
-			<Link to='/'>
+		<div className='header'>
+			<Navbar />
+			{/* <Link to='/'>
 				<h1>Home</h1>
 			</Link>
 			<Link to='/course/:id'>
@@ -12,7 +13,7 @@ function Header() {
 			</Link>
 			<Link to='/courses/:category'>
 				<h1>Courses List</h1>
-			</Link>
+			</Link> */}
 		</div>
 	);
 }
