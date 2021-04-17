@@ -2,10 +2,11 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Course from './pages/course';
 import Courses from './pages/courses';
 import Home from './pages/home';
-import AppLayout from './layouts/appLayout/index';
+import AppLayout from './layouts/applayout/index';
 import AdminLayout from './layouts/adminLayout';
 import AdminCourses from './pages/adminCourses';
 import AdminUser from './pages/adminUser';
+import Loginpage from './pages/loginPage/Loginpage';
 function App() {
 	return (
 		<BrowserRouter>
@@ -28,7 +29,7 @@ function App() {
 				<Route path='/'>
 					<AppLayout>
 						<Switch>
-							<Route path='/' exact>
+							{/* <Route path='/' exact>
 								<Home />
 							</Route>
 							<Route path='/courses/:category'>
@@ -36,6 +37,9 @@ function App() {
 							</Route>
 							<Route path='/course/:id'>
 								<Course />
+							</Route> */}
+							<Route path='/login'>
+								<Loginpage />
 							</Route>
 						</Switch>
 					</AppLayout>

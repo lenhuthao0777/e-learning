@@ -4,7 +4,7 @@ function Header() {
 	return (
 		<div>
 			<h1>Header</h1>
-			<Link to='/'>
+			{/* <Link to='/'>
 				<h1>Home</h1>
 			</Link>
 			<Link to='/course/:id'>
@@ -12,7 +12,7 @@ function Header() {
 			</Link>
 			<Link to='/courses/:category'>
 				<h1>Courses List</h1>
-			</Link>
+			</Link> */}
 		</div>
 	);
 }
