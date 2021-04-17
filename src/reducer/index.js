@@ -1,3 +1,5 @@
 import { combineReducers } from 'redux';
-
-export const rootReducer = combineReducers({});
+import coursesReducer from './Courses';
+export const rootReducer = combineReducers({
+	coursesReducer,
+});
