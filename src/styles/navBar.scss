@@ -6,8 +6,20 @@
     position: relative;
     z-index: 1000;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-    &__mobile {
+    &__icon-menu {
         display: none;
+        padding: 0 12px;
+        position: absolute;
+        left: 0;
+        z-index: 10000;
+        &__btn {
+            border: none;
+            background-color: $color-white-0;
+            .menu-icon {
+                font-size: 24px;
+                color: $color-black-2;
+            }
+        }
     }
     &__logo {
         padding: 0 12px 0 0;
@@ -556,7 +568,7 @@
         }
         &_business {
             position: absolute;
-            top: 250%;
+            top: 300%;
             left: -92%;
             width: 280px;
             height: 180px;
@@ -587,7 +599,7 @@
         }
         &_teach {
             position: absolute;
-            top: 250%;
+            top: 300%;
             left: -4%;
             width: 280px;
             height: 180px;
@@ -760,7 +772,134 @@
         display: none;
     }
 }
-
+.header-navbar--mobile {
+    .side-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100%;
+        background-color: $color-white-0;
+        transform: translateX(-100%);
+        transition: 0.3s ease;
+        opacity: 0;
+        z-index: 10000;
+        &.active {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+        &__button-click {
+            display: none;
+            position: absolute;
+            top: 1.5%;
+            right: -20%;
+            animation: fadeIn ease 1s;
+            &-close {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: $color-white-0;
+                button {
+                    border: none;
+                    background-color: $color-white-0;
+                    .close-icon {
+                        font-size: 24px;
+                        color: $color-black-2;
+                    }
+                }
+            }
+            &.active {
+                display: block;
+            }
+        }
+        &__menu {
+            &-profile {
+                background-color: #fbfbf8;
+                &__list {
+                    li {
+                        list-style: none;
+                        button {
+                            background-color: transparent;
+                            border: none;
+                            outline: none;
+                            display: flex;
+                            align-items: center;
+                            height: 96px;
+                            padding: 16px;
+                            width: 100%;
+                            .profile-img {
+                                padding-right: 20px;
+                                position: relative;
+                                ::before {
+                                    content: "";
+                                    position: absolute;
+                                    top: -1%;
+                                    right: 25%;
+                                    background-color: $color-red-0;
+                                    width: 16px;
+                                    height: 16px;
+                                    border-radius: 50%;
+                                    overflow: hidden;
+                                }
+                            }
+                            .profile-user__name {
+                                position: relative;
+                                padding-right: 20px;
+                                .user-name {
+                                    font-size: 16px;
+                                    color: $color-black-0;
+                                    font-weight: 700;
+                                    margin: 0;
+                                    letter-spacing: -0.02rem;
+                                    text-align: left;
+                                    line-height: 16px;
+                                    padding-right: 10px;
+                                }
+                                .welcome {
+                                    font-size: 14px;
+                                    color: $color-black-2;
+                                    margin: 0;
+                                    letter-spacing: -0.02rem;
+                                    text-align: left;
+                                }
+                            }
+                            .iconRightProfile {
+                                font-size: 20px;
+                                color: $color-black-1;
+                            }
+                        }
+                    }
+                }
+            }
+            &-heading {
+                margin: 0;
+                padding: 16px 16px 0 16px;
+                h3 {
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: $color-black-2;
+                }
+            }
+        }
+    }
+    .side-bar__overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        display: none;
+        animation: fadeIn ease-out 0.3s;
+        &.active {
+            display: block;
+        }
+    }
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -769,42 +908,17 @@
         opacity: 1;
     }
 }
+
 @include responesive("extra-large") {
 }
 @include responesive("medium") {
     .header--navbar {
-        // justify-content: space-between;
         height: 56px;
         padding: 4px;
         position: relative;
-        &__mobile {
+        z-index: 10000;
+        &__icon-menu {
             display: block;
-            padding: 0 12px;
-            position: absolute;
-            left: 0;
-            &-icon {
-                border: none;
-                background-color: $color-white-0;
-                .menu-icon {
-                    font-size: 24px;
-                    color: $color-black-1;
-                }
-            }
-            .side-bar {
-                position: absolute;
-                top: -62%;
-                left: 0;
-                width: 250px;
-                height: 100vh;
-                background-color: red;
-                transform: translateX(-100%);
-                transition: 0.3s ease;
-                opacity: 0;
-                &.active {
-                    transform: translateX(0%);
-                    opacity: 1;
-                }
-            }
         }
         &__logo {
             position: absolute;
@@ -847,16 +961,35 @@
                 padding: 0 12px;
                 .search-icon__mobile {
                     font-size: 24px;
-                    color: $color-black-1;
+                    color: $color-black-2;
                 }
             }
             &-cart {
                 padding: 0 12px;
                 .cart-icon__mobile {
                     font-size: 24px;
-                    color: $color-black-1;
+                    color: $color-black-2;
+                }
+                .cart-mobile__quantity {
+                    position: absolute;
+                    top: -43%;
+                    right: 3%;
+                    padding: 1px 8px;
+                    border-radius: 50%;
+                    background-color: red;
+                    span {
+                        font-size: 12px;
+                        color: $color-white-0;
+                        font-weight: 700;
+                    }
                 }
             }
+        }
+    }
+    .header-navbar--mobile {
+        .side-bar__overlay {
+            width: 100%;
+            height: 100%;
         }
     }
 }

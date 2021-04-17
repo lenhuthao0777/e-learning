@@ -46,3 +46,10 @@
         }
     }
 }
+@include responesive("small") {
+    .banner {
+        &-content {
+            display: none;
+        }
+    }
+}

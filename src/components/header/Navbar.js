@@ -7,19 +7,20 @@ import LanguageOutlinedIcon from '@material-ui/icons/LanguageOutlined';
 import MenuIcon from '@material-ui/icons/Menu';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import { useState } from 'react';
-
+import CloseIcon from '@material-ui/icons/Close';
+import UdeAvatar from '../avatar/index';
 // const menu = ['Development', 'Business','', 'Marketing']
 function Navbar() {
 	const [SideBar, setSideBar] = useState(false);
 	return (
 		<>
 			<div className='header--navbar'>
-				<div className='header--navbar__mobile'>
-					<button className='header--navbar__mobile-icon'>
+				<div className='header--navbar__icon-menu'>
+					<button
+						className='header--navbar__icon-menu__btn'
+						onClick={() => setSideBar(true)}>
 						<MenuIcon className='menu-icon' />
 					</button>
-					<div
-						className={`side-bar ${SideBar ? 'active' : ''}`}></div>
 				</div>
 				<div className='header--navbar__logo'>
 					<Link to='/' style={{ textDecoration: 'none' }}>
@@ -999,8 +1000,75 @@ function Navbar() {
 						<Link to='/cart' style={{ textDecoration: 'none' }}>
 							<ShoppingCartOutlinedIcon className='cart-icon__mobile' />
 						</Link>
+						<div className='cart-mobile__quantity'>
+							<span>0</span>
+						</div>
 					</span>
 				</div>
+			</div>
+			<div className='header-navbar--mobile'>
+				<div className={`side-bar ${SideBar ? 'active' : ''}`}>
+					<div
+						className={`side-bar__button-click ${
+							SideBar ? 'active' : ''
+						}`}
+						onClick={() => setSideBar(false)}>
+						<div className='side-bar__button-click-close'>
+							<button>
+								<CloseIcon className='close-icon' />
+							</button>
+						</div>
+					</div>
+					<div className='side-bar__menu'>
+						<div className='side-bar__menu-profile'>
+							<ul className='side-bar__menu-profile__list'>
+								<li>
+									<button>
+										<div className='profile-img'>
+											<UdeAvatar
+												AvatarSrc={
+													'https://i1.wp.com/katzenworld.co.uk/wp-content/uploads/2019/06/funny-cat.jpeg?fit=1920%2C1920&ssl=1'
+												}
+												size='AvatarMd'
+											/>
+										</div>
+										<div className='profile-user__name'>
+											<p className='user-name'>
+												Hello, Funny Cat
+											</p>
+											<p className='welcome'>Welcome</p>
+										</div>
+										<KeyboardArrowRightIcon className='iconRightProfile' />
+									</button>
+								</li>
+							</ul>
+						</div>
+						<div className='side-bar__menu-heading'>
+							<h3>Apprendre</h3>
+						</div>
+						<div className='side-bar__menu-mon-apprentissage'>
+							<ul>
+								<li>
+									<Link
+										to='/'
+										style={{
+											textDecoration: 'none',
+										}}>
+										Mon apprentissage
+									</Link>
+								</li>
+							</ul>
+						</div>
+						{/* <ul className='side-bar__menu-list'>
+								<li className='side-bar__menu-list--item'>
+									Development
+								</li>
+							</ul> */}
+					</div>
+				</div>
+				<div
+					className={`side-bar__overlay ${SideBar ? 'active' : ''}`}
+					onClick={() => setSideBar(false)}></div>
 			</div>
 		</>
 	);
