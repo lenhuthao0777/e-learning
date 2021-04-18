@@ -1,0 +1,13 @@
+.login-form {
+    width: 380px;
+    margin: 30px auto;
+    &__heading {
+        padding: 24px 64px 24px 24px;
+        border-bottom: 1px solid $color-gray-2;
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: $color-black-0;
+        }
+    }
+}

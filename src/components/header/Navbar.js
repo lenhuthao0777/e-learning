@@ -23,7 +23,7 @@ function Navbar() {
 					</button>
 				</div>
 				<div className='header--navbar__logo'>
-					<Link to='/' style={{ textDecoration: 'none' }}>
+					<Link to='/'>
 						<img src='./img/logo-coral.svg' alt='' />
 					</Link>
 				</div>
@@ -34,7 +34,7 @@ function Navbar() {
 						style={{ transition: '.3s ease in' }}>
 						<ul className='header--navbar__category-submenu__list'>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									Development
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -358,7 +358,7 @@ function Navbar() {
 								</div>
 							</li>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									Business
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -397,7 +397,7 @@ function Navbar() {
 								</div>
 							</li>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									Finance & Accounting Courses
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -436,7 +436,7 @@ function Navbar() {
 								</div>
 							</li>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									IT & Software
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -475,7 +475,7 @@ function Navbar() {
 								</div>
 							</li>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									Office Productivity
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -514,7 +514,7 @@ function Navbar() {
 								</div>
 							</li>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									Personal Development
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -553,7 +553,7 @@ function Navbar() {
 								</div>
 							</li>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									Design
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -592,7 +592,7 @@ function Navbar() {
 								</div>
 							</li>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									Marketing
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -631,7 +631,7 @@ function Navbar() {
 								</div>
 							</li>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									Lifestyle
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -670,7 +670,7 @@ function Navbar() {
 								</div>
 							</li>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									Photography & Video
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -709,7 +709,7 @@ function Navbar() {
 								</div>
 							</li>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									Health & Fitness
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -748,7 +748,7 @@ function Navbar() {
 								</div>
 							</li>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									Music
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -787,7 +787,7 @@ function Navbar() {
 								</div>
 							</li>
 							<li className='header--navbar__category-submenu__list-item'>
-								<Link to='/' style={{ textDecoration: 'none' }}>
+								<Link to='/'>
 									Teaching & Academics
 									<KeyboardArrowRightIcon className='angleRightIcon' />
 								</Link>
@@ -838,7 +838,6 @@ function Navbar() {
 				</div>
 				<div className='header--navbar__gap-button'>
 					<Link
-						style={{ textDecoration: 'none' }}
 						className='header--navbar__gap-button-text'
 						to='/home'>
 						Udemy for Business
@@ -862,7 +861,6 @@ function Navbar() {
 				</div>
 				<div className='header--navbar__gap-button'>
 					<Link
-						style={{ textDecoration: 'none' }}
 						className='header--navbar__gap-button-text'
 						to='/home'>
 						Teach on Udemy
@@ -970,19 +968,24 @@ function Navbar() {
 					<div className='header--navbar__cart-no_cart'></div>
 				</div>
 				<div className='header--navbar__login'>
-					<Link to='/login' style={{ textDecoration: 'none' }}>
+					<Link to='/login'>
 						<Button
 							type='button'
 							color='btn--btn-outline'
 							size='md'>
-							Sign up
+							To log in
 						</Button>
 					</Link>
 				</div>
-				<div className='header--navbar__signup'>
-					<Button type='button' color='btn--btn-primary' size='md'>
-						Button
-					</Button>
+				<div className='header--navbar__register'>
+					<Link to='/register'>
+						<Button
+							type='button'
+							color='btn--btn-primary'
+							size='md'>
+							Register now
+						</Button>
+					</Link>
 				</div>
 				<div className='header--navbar__language'>
 					<Button
@@ -997,7 +1000,7 @@ function Navbar() {
 						<SearchOutlinedIcon className='search-icon__mobile' />
 					</span>
 					<span className='header--navbar__icon-mobile-cart'>
-						<Link to='/cart' style={{ textDecoration: 'none' }}>
+						<Link to='/cart'>
 							<ShoppingCartOutlinedIcon className='cart-icon__mobile' />
 						</Link>
 						<div className='cart-mobile__quantity'>
@@ -1044,18 +1047,12 @@ function Navbar() {
 							</ul>
 						</div>
 						<div className='side-bar__menu-heading'>
-							<h3>Apprendre</h3>
+							<h3>Learn</h3>
 						</div>
-						<div className='side-bar__menu-mon-apprentissage'>
+						<div className='side-bar__menu-learning'>
 							<ul>
 								<li>
-									<Link
-										to='/'
-										style={{
-											textDecoration: 'none',
-										}}>
-										Mon apprentissage
-									</Link>
+									<Link to='/'>My learning</Link>
 								</li>
 							</ul>
 						</div>

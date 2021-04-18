@@ -765,7 +765,7 @@
     &__login {
         margin: 0 8px 0 12px;
     }
-    &__signup {
+    &__register {
         margin: 0 12px 0 0;
     }
     &__icon-mobile {
@@ -773,6 +773,7 @@
     }
 }
 .header-navbar--mobile {
+    display: none;
     .side-bar {
         position: absolute;
         top: 0;
@@ -791,15 +792,15 @@
         &__button-click {
             display: none;
             position: absolute;
-            top: 1.5%;
-            right: -20%;
+            top: 1.6%;
+            right: -23%;
             animation: fadeIn ease 1s;
             &-close {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 50px;
-                height: 50px;
+                width: 48px;
+                height: 48px;
                 border-radius: 50%;
                 background-color: $color-white-0;
                 button {
@@ -883,6 +884,15 @@
                     color: $color-black-2;
                 }
             }
+            &-learning {
+                border-bottom: 1px solid $color-gray-6;
+                ul {
+                    padding: 8px 0;
+                    li {
+                        padding: 8px 16px;
+                    }
+                }
+            }
         }
     }
     .side-bar__overlay {
@@ -916,7 +926,6 @@
         height: 56px;
         padding: 4px;
         position: relative;
-        z-index: 10000;
         &__icon-menu {
             display: block;
         }
@@ -947,7 +956,7 @@
         &__login {
             display: none;
         }
-        &__signup {
+        &__register {
             display: none;
         }
         &__language {
@@ -974,9 +983,13 @@
                     position: absolute;
                     top: -43%;
                     right: 3%;
-                    padding: 1px 8px;
+                    width: 18px;
+                    height: 18px;
                     border-radius: 50%;
                     background-color: red;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     span {
                         font-size: 12px;
                         color: $color-white-0;
@@ -987,6 +1000,10 @@
         }
     }
     .header-navbar--mobile {
+        display: block;
+        .side-bar {
+            display: block;
+        }
         .side-bar__overlay {
             width: 100%;
             height: 100%;
