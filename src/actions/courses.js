@@ -4,7 +4,7 @@ import {
 	GET_COURSES_FAILURE,
 } from '../constants/courses';
 import coursesApi from '../services/CoursesApi';
-export function getCoursesByCategory(category) {
+const getCoursesByCategory = (category) => {
 	return async (dispatch) => {
 		dispatch({ type: GET_COURSES_REQUEST });
 		try {
@@ -17,4 +17,5 @@ export function getCoursesByCategory(category) {
 			});
 		}
 	};
-}
+};
+export { getCoursesByCategory };

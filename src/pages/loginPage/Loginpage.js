@@ -3,7 +3,20 @@ import { useForm, Controller } from 'react-hook-form';
 import { Input, FormGroup, Label } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../actions/auth';
+import { useEffect } from 'react';
+import { Redirect, useLocation } from 'react-router';
+import qs from 'qs';
 function Loginpage() {
+	const dispatch = useDispatch();
+	const { userInfo, isLoading, error } = useSelector(
+		(state) => state.authReducer
+	);
+	const location = useLocation();
+	// useEffect(()=>{
+
+	// })
 	// controlled compoent: conttrol tat ca moi thu tren dao dien bang state, props
 	// uncontrooled component: controll dao dien ko thong qua state , props
 	// ca usestate va useref deu dung luu tru data
@@ -14,6 +27,7 @@ function Loginpage() {
 		// console.log(inputTaiKhoan.current.value);
 		// console.log(inputMatKhau.current.value);
 		console.log(value);
+		dispatch(login(value));
 	};
 	const schema = yup.object().shape({
 		taiKhoan: yup
@@ -33,7 +47,15 @@ function Loginpage() {
 	console.log(errors);
 
 	// tao schema validation
-
+	// userInfo co data chuyen den trang home
+	if (userInfo) {
+		const { redirectTo } = qs.parse(location.search, {
+			ignoreQueryPrefix: true,
+		});
+		if (redirectTo) {
+			return <Redirect to={redirectTo} />;
+		}
+	}
 	return (
 		<form onSubmit={handleSubmit(handelLogin)}>
 			{/* <h1>Login page</h1>
@@ -89,6 +111,7 @@ function Loginpage() {
 				/>
 				{errors.taiKhoan && <div>{errors.taiKhoan.message}</div>}
 			</FormGroup> */}
+			{error && <div>{error}</div>}
 			<button>Login</button>
 		</form>
 	);

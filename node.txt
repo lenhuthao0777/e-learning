@@ -6,3 +6,5 @@ src:
 -sass: npm i -D sass
 -util: chua cac common func de tai su dung trong project
 -co redux: actinons, constants, reducer
+-layout: chua cac component layout
+-auth: chua cac component va cac ham su ly lien quan den authentication

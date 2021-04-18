@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { getCoursesByCategory } from '../../actions/courses';
+import { getCoursesByCategory, getCourses } from '../../actions/courses';
 function Courses() {
 	const dispatch = useDispatch();
 	const { category } = useParams();
